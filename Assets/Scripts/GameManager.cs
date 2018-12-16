@@ -13,12 +13,15 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private KeyCode teclaParaPularTexto;
     [SerializeField]
+    private AudioClip tutorial;
+    [SerializeField]
     private AudioClip fase1;
     [SerializeField]
     private AudioClip fase2;
     [SerializeField]
     private AudioClip fase3;
 
+    private int arquivos = 0;
 
     private void Awake() {
         if (instance == null)
@@ -34,18 +37,39 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void GameOver() {
-
+    public string PegarCena() {
+        return SceneManager.GetActiveScene().name;
     }
 
-    // Use this for initialization
+    public void ResetGame() {
+        SceneManager.LoadScene("TelaInicial");
+    }
+
+    public void GameOver() {
+        SceneManager.LoadScene("GameOver");
+    }
+
+    public void AumentarArquivos() {
+        arquivos++;
+    }
+
+    public int PegarArquivos() {
+        return arquivos;
+    }
+
     void Start () {
         SceneManager.activeSceneChanged += OnSceneChanged;
 	}
 
     private void OnSceneChanged(Scene current, Scene next) {
-        if(next.name == "Tutorial") {
+        if(next.name == "Tutorial1") {
             SoundManager.Instance.PlayMusic(fase1);
+        }else if (next.name == "GameOver") {
+            arquivos = 0;
+        }else if (next.name == "TelaInicial") {
+            SoundManager.Instance.PlayMusic(tutorial);
+        }else if (next.name == "Tutorial2") {
+
         }
     }
 
@@ -57,8 +81,8 @@ public class GameManager : MonoBehaviour {
         return tempoParaSeguirTexto;
     }
 
-    public void ComecarTutorial() {
-        SceneManager.LoadScene("Tutorial");
+    public void PassarFase() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public float PegarTempoDePausaDoTexto() {

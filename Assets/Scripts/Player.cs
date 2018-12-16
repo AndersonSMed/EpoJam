@@ -41,8 +41,13 @@ public class Player : MonoBehaviour {
 	}
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Wall")) {
+        if (collision.gameObject.CompareTag("Kill")) {
             GameManager.Instance.GameOver();
+        }
+        if (collision.gameObject.CompareTag("File")) {
+            GameManager.Instance.AumentarArquivos();
+            Destroy(collision.gameObject);
+            GameManager.Instance.PassarFase();
         }
     }
 }

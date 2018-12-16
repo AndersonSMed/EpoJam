@@ -300,7 +300,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -380,25 +379,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 100
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!1 &632487800
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +790,7 @@ MonoBehaviour:
   tempoParaSeguirTexto: 0.1
   tempoDePausaDoTexto: 0.5
   teclaParaPularTexto: 32
+  tutorial: {fileID: 8300000, guid: 8623bae1865b04a4aa18cc30be6634a4, type: 3}
   fase1: {fileID: 8300000, guid: 5845e902c9b34b54e91e8e12a86b35ff, type: 3}
   fase2: {fileID: 0}
   fase3: {fileID: 0}

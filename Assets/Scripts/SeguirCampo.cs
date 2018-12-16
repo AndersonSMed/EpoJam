@@ -38,8 +38,8 @@ public class SeguirCampo : MonoBehaviour {
 
 	void Update () {
         if (Input.GetKeyDown(GameManager.Instance.PegarTeclaPularTexto()) && !teclaPularPressionada) {
-            if (meuTexto.text.Contains(textoObjetivo.text)){
-                GameManager.Instance.ComecarTutorial();
+            if (meuTexto.text.Contains(textoObjetivo.text) && GameManager.Instance.PegarCena() == "TelaInicial"){
+                GameManager.Instance.PassarFase();
             } else {
                 meuTexto.text = textoObjetivo.text;
             }
