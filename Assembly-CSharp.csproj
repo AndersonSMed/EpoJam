@@ -108,9 +108,12 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\AlternarCursor.cs" />
+    <Compile Include="Assets\Scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\FadeOut.cs" />
     <Compile Include="Assets\Scripts\File.cs" />
     <Compile Include="Assets\Scripts\FileInfo.cs" />
+    <Compile Include="Assets\Scripts\FileManager.cs" />
+    <Compile Include="Assets\Scripts\FinalField.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PlataformaDefault.cs" />
     <Compile Include="Assets\Scripts\PlataformaPuxar.cs" />

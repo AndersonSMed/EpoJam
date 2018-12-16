@@ -11,7 +11,7 @@ public class PlataformaSubirDescer : PlataformaSubir {
         base.OnGUI();
         Event ev = Event.current;
         if (ev.type == EventType.KeyDown && ev.keyCode.ToString().Length == 1 && char.IsLetter(ev.keyCode.ToString()[0])) {
-            if (ev.keyCode.ToString() == "R" && textoPlataforma.Length >= 6) {
+            if (ev.keyCode.ToString() == "R" && textoPlataforma.Length >= 6 && !subindo) {
                 if (textoPlataforma[textoPlataforma.Length - 2] == 'E' && textoPlataforma[textoPlataforma.Length - 3] == 'C'
                     && textoPlataforma[textoPlataforma.Length - 4] == 'S' && textoPlataforma[textoPlataforma.Length - 5] == 'E'
                     && textoPlataforma[textoPlataforma.Length - 6] == 'D') {

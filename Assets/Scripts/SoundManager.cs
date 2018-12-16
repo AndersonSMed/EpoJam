@@ -30,6 +30,16 @@ public class SoundManager : MonoBehaviour {
         musics = new List<AudioClip>();
     }
 
+    public void PlayMusic(AudioClip clip) {
+        music.Stop();
+        music.clip = clip;
+        music.Play();
+    }
+
+    public void StopMusic() {
+        music.Stop();
+    }
+
     public void PlayMusicLevel(AudioClip clip) {
         if (music.isPlaying) {
             float time = music.time;

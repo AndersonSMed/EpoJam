@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 401459f4abb4cbd4487c31dea51f9069
+  - enabled: 1
     path: Assets/Scenes/TelaInicial.unity
     guid: 1d6f21aaa1af28349b8d700a00901992
   - enabled: 1
@@ -17,6 +20,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase3.unity
     guid: 2f38f2e486bf84d4aa40ec6330e8f683
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: f7e7e22e69fb44f4299a3287d9a99f44
+  - enabled: 1
+    path: Assets/Scenes/TelaFinal.unity
+    guid: 74e2490ce0cc960498981f61ba8dec96
+  - enabled: 1
+    path: Assets/Scenes/LogFinal.unity
+    guid: c5c14955b20a945459930e0f19295e9d
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: ed79076ddc8e32d488237e0222a4164a

@@ -21,7 +21,11 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private AudioClip fase3;
     [SerializeField]
+    private AudioClip gameOver;
+    [SerializeField]
     private AudioClip file;
+    [SerializeField]
+    private AudioClip boss;
 
     private int arquivos = 0;
 
@@ -44,7 +48,10 @@ public class GameManager : MonoBehaviour {
     }
 
     public void ResetGame() {
-        SceneManager.LoadScene("TelaInicial");
+        if(PegarCena() == "Menu")
+            SceneManager.LoadScene("TelaInicial");
+        if (PegarCena() == "GameOver")
+            SceneManager.LoadScene("Fase1");
     }
 
     public void GameOver() {
@@ -58,9 +65,15 @@ public class GameManager : MonoBehaviour {
             if (arquivos == 3) {
                 PassarFase();
             }
-        } else {
+        } else if (SceneManager.GetActiveScene().name != "Boss") {
             PassarFase();
         }
+    }
+
+    public void DiminuirArquivos() {
+        arquivos--;
+        if (arquivos == 0)
+            GameOver();
     }
 
     public int PegarArquivos() {
@@ -73,6 +86,7 @@ public class GameManager : MonoBehaviour {
 
     private void OnSceneChanged(Scene current, Scene next) {
         if (next.name == "GameOver") {
+            SoundManager.Instance.PlayMusic(gameOver);
             arquivos = 0;
         }else if (next.name == "TelaInicial") {
             SoundManager.Instance.PlayMusicLevel(tutorial);
@@ -82,6 +96,12 @@ public class GameManager : MonoBehaviour {
             SoundManager.Instance.PlayMusicLevel(fase2);
         }else if (next.name == "Fase3") {
             SoundManager.Instance.PlayMusicLevel(fase3);
+        } else if (next.name == "TelaFinal") {
+            SoundManager.Instance.PlayMusicLevel(tutorial);
+        } else if (next.name == "LogFinal") {
+            SoundManager.Instance.StopMusic();
+        } else if (next.name == "Boss") {
+            SoundManager.Instance.PlayMusic(boss);
         }
     }
 
@@ -94,7 +114,20 @@ public class GameManager : MonoBehaviour {
     }
 
     public void PassarFase() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().name == "TelaInicial" || SceneManager.GetActiveScene().name == "GameOver" ||
+            SceneManager.GetActiveScene().name == "TelaFinal")
+            ChangeScene();
+        else
+            Invoke("ChangeScene", 1f);
+    }
+
+    private void ChangeScene() {
+        if(SceneManager.GetActiveScene().name != "GameOver")
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void SairDoJogo() {
+        Application.Quit();
     }
 
     public float PegarTempoDePausaDoTexto() {

@@ -60,7 +60,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoPreenchido: {fileID: 114356488958662808}
   textoObjetivo: {fileID: 0}
-  fadeOut: {fileID: 7400000, guid: 832d6eab668c1d944af2ed3e9a1e38a6, type: 2}
 --- !u!114 &114356488958662808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,7 +86,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 101
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

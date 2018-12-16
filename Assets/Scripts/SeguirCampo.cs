@@ -29,7 +29,7 @@ public class SeguirCampo : MonoBehaviour {
             posicaoTexto++;
             if (textoObjetivo.text[posicaoTexto - 1] == ',')
                 Invoke("SeguirTexto", tempoPausarTexto);
-            else if (textoObjetivo.text[posicaoTexto - 1] == '.')
+            else if (textoObjetivo.text[posicaoTexto - 1] == '.' || textoObjetivo.text[posicaoTexto - 1] == ':')
                 Invoke("SeguirTexto", tempoPausarTexto * 2);
             else
                 Invoke("SeguirTexto", tempoSeguirTexto);

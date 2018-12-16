@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - Kill
   - File
+  - Platform
+  - Boss
   layers:
   - Default
   - TransparentFX

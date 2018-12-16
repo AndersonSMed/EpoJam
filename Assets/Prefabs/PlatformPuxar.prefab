@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114321107458918214}
   m_Layer: 5
   m_Name: PlatformPuxar
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
