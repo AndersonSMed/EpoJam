@@ -40,8 +40,6 @@ public class SeguirCampo : MonoBehaviour {
         if (Input.GetKeyDown(GameManager.Instance.PegarTeclaPularTexto()) && !teclaPularPressionada) {
             if (meuTexto.text.Contains(textoObjetivo.text) && GameManager.Instance.PegarCena() == "TelaInicial"){
                 GameManager.Instance.PassarFase();
-            } else {
-                meuTexto.text = textoObjetivo.text;
             }
             teclaPularPressionada = true;
         }

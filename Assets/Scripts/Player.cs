@@ -5,10 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     [SerializeField]
     private float speed = 1f;
+    [SerializeField]
+    private GameObject hook;
     private Animator anim;
     private Rigidbody2D rb;
     private bool walkingLeft = false;
     private bool walkingRight = false;
+    private bool puxando = false;
 
     void Start () {
         anim = GetComponent<Animator>();
@@ -24,14 +27,19 @@ public class Player : MonoBehaviour {
             walkingRight = false;
         if (Input.GetKeyUp(KeyCode.LeftArrow))
             walkingLeft = false;
+        if (puxando)
+            hook.SetActive(true);
+        else
+            hook.SetActive(false);
     }
 
-    // Update is called once per frame
     void FixedUpdate () {
         if (walkingRight) {
             rb.AddForce(Vector2.right * speed);
+            transform.rotation = new Quaternion(0,0,0,transform.rotation.w);
             anim.SetBool("walking", true);
         }else if (walkingLeft) {
+            transform.rotation = new Quaternion(0, 180, 0, transform.rotation.w);
             anim.SetBool("walking", true);
             rb.AddForce(Vector2.left * speed);
         } else {
@@ -47,7 +55,17 @@ public class Player : MonoBehaviour {
         if (collision.gameObject.CompareTag("File")) {
             GameManager.Instance.AumentarArquivos();
             Destroy(collision.gameObject);
-            GameManager.Instance.PassarFase();
         }
+    }
+
+    private void MudarHook() {
+        puxando = !puxando;
+        if (puxando)
+            Invoke("MudarHook", 0.4f);
+    }
+
+    public void Puxar() {
+        Invoke("MudarHook", 0.4f);
+        anim.SetBool("hooking", true);
     }
 }

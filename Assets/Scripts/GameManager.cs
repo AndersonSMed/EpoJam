@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
     private AudioClip fase2;
     [SerializeField]
     private AudioClip fase3;
+    [SerializeField]
+    private AudioClip file;
 
     private int arquivos = 0;
 
@@ -51,6 +53,14 @@ public class GameManager : MonoBehaviour {
 
     public void AumentarArquivos() {
         arquivos++;
+        SoundManager.Instance.PlaySFX(file);
+        if (SceneManager.GetActiveScene().name == "Fase2") {
+            if (arquivos == 3) {
+                PassarFase();
+            }
+        } else {
+            PassarFase();
+        }
     }
 
     public int PegarArquivos() {
@@ -62,14 +72,16 @@ public class GameManager : MonoBehaviour {
 	}
 
     private void OnSceneChanged(Scene current, Scene next) {
-        if(next.name == "Tutorial1") {
-            SoundManager.Instance.PlayMusic(fase1);
-        }else if (next.name == "GameOver") {
+        if (next.name == "GameOver") {
             arquivos = 0;
         }else if (next.name == "TelaInicial") {
-            SoundManager.Instance.PlayMusic(tutorial);
-        }else if (next.name == "Tutorial2") {
-
+            SoundManager.Instance.PlayMusicLevel(tutorial);
+        }else if (next.name == "Fase1") {
+            SoundManager.Instance.PlayMusicLevel(fase1);
+        }else if (next.name == "Fase2") {
+            SoundManager.Instance.PlayMusicLevel(fase2);
+        }else if (next.name == "Fase3") {
+            SoundManager.Instance.PlayMusicLevel(fase3);
         }
     }
 

@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\HookMachine.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -107,12 +108,16 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\AlternarCursor.cs" />
+    <Compile Include="Assets\Scripts\FadeOut.cs" />
+    <Compile Include="Assets\Scripts\File.cs" />
     <Compile Include="Assets\Scripts\FileInfo.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PlataformaDefault.cs" />
+    <Compile Include="Assets\Scripts\PlataformaPuxar.cs" />
     <Compile Include="Assets\Scripts\PlataformaSubir.cs" />
     <Compile Include="Assets\Scripts\PlataformaSubirDescer.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PreencherTexto.cs" />
     <Compile Include="Assets\Scripts\ResetField.cs" />
     <Compile Include="Assets\Scripts\SeguirCampo.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />

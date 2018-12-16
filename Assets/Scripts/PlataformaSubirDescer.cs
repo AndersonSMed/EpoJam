@@ -7,7 +7,7 @@ public class PlataformaSubirDescer : PlataformaSubir {
     protected float minimumY;
     protected bool descendo = false;
 
-    private void OnGUI() {
+    protected void OnGUI() {
         base.OnGUI();
         Event ev = Event.current;
         if (ev.type == EventType.KeyDown && ev.keyCode.ToString().Length == 1 && char.IsLetter(ev.keyCode.ToString()[0])) {
@@ -26,7 +26,7 @@ public class PlataformaSubirDescer : PlataformaSubir {
         descendo = false;
     }
 
-    void Update () {
+    protected void Update () {
         base.Update();
         if (GetComponent<RectTransform>().anchoredPosition.y > minimumY) {
             if (descendo) {

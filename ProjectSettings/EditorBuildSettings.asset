@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/TelaInicial.unity
     guid: 1d6f21aaa1af28349b8d700a00901992
   - enabled: 1
-    path: Assets/Scenes/Tutorial1.unity
+    path: Assets/Scenes/Fase1.unity
     guid: 277fa710afd5ebd44b7b1a602d20311f
   - enabled: 1
-    path: Assets/Scenes/Tutorial2.unity
+    path: Assets/Scenes/Fase2.unity
     guid: 35005a76b70a9be49b23a3be704936d3
+  - enabled: 1
+    path: Assets/Scenes/Fase3.unity
+    guid: 2f38f2e486bf84d4aa40ec6330e8f683
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: ed79076ddc8e32d488237e0222a4164a
