@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlataformaSubirDescer : PlataformaSubir {
+    [SerializeField]
+    protected float minimumY;
     protected bool descendo = false;
 
     private void OnGUI() {
@@ -26,8 +28,10 @@ public class PlataformaSubirDescer : PlataformaSubir {
 
     void Update () {
         base.Update();
-        if (descendo) {
-            transform.Translate(Vector2.down * Time.deltaTime * speed);
+        if (GetComponent<RectTransform>().anchoredPosition.y > minimumY) {
+            if (descendo) {
+                transform.Translate(Vector2.down * Time.deltaTime * speed);
+            }
         }
     }
 }

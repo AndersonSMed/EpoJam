@@ -9,9 +9,12 @@ public class PlataformaSubir : PlataformaDefault {
     protected float force = 0.6f;
     [SerializeField]
     protected float speed = 5;
+    [SerializeField]
+    protected float maximumY;
 
     protected bool subindo = false;
     protected Vector2 newPosition;
+    protected bool podeSeMover = true;
 
     protected void OnGUI() {
         base.OnGUI();
@@ -31,12 +34,12 @@ public class PlataformaSubir : PlataformaDefault {
         subindo = false;
     }
 
-    // Update is called once per frame
     protected void Update () {
         base.Update();
-        if (subindo) {
-            transform.Translate(Vector2.up * Time.deltaTime * speed);
+        if (GetComponent<RectTransform>().anchoredPosition.y < maximumY) {
+            if (subindo) {
+                transform.Translate(Vector2.up * Time.deltaTime * speed);
+            }
         }
-
 	}
 }

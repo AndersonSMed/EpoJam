@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50412387566937720}
   - component: {fileID: 114950484766084628}
   - component: {fileID: 114228371536337226}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 7
 --- !u!61 &61810595162472546
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -123,7 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: 0
   force: 0.6
-  speed: 5
+  speed: 3
+  maximumY: 247
+  minimumY: -484.4
 --- !u!114 &114950484766084628
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,8 +22,10 @@ public class PlataformaDefault : MonoBehaviour {
     protected void OnGUI() {
         Event ev = Event.current;
         if(ev.type == EventType.KeyDown && ev.keyCode.ToString().Length == 1 && char.IsLetter(ev.keyCode.ToString()[0])) {
-            textoPlataforma += ev.keyCode.ToString();
-            platform.text = textoPlataforma;
+            if(platform.text.Length * platform.fontSize <= gameObject.GetComponent<RectTransform>().sizeDelta.x) {
+                textoPlataforma += ev.keyCode.ToString();
+                platform.text = textoPlataforma;
+            }
         }
     }
 
